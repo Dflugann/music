@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Music</b>School',
 
     'logo_mini' => '<b>A</b>LT',
 
@@ -108,19 +108,39 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'MENU MUSIC',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'file',
-            'label'       => 4,
+            'text'      => 'Lista Musicas',
+            'route'     => 'admin.index',
+            'active'    => ['admin', 'admin/*'],
+            'icon'      => 'music',
+            /*
+             'label'       => 4,
             'label_color' => 'success',
+            */
         ],
+        [
+            'text'        => 'Cadastrar Musica',
+            'route'         => 'admin.create',
+            'active'         => ['admin/create'],
+            'icon'        => 'music',
+            /*
+             'label'       => 4,
+            'label_color' => 'success',
+            */
+        ],
+        [
+            'text'        => 'Site',
+            'url'         => '/',
+            'active'         => ['admin/create'],
+            'icon'        => 'music',
+            /*
+             'label'       => 4,
+            'label_color' => 'success',
+            */
+        ],
+        /*
+
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
@@ -183,6 +203,7 @@ return [
             'text'       => 'Information',
             'icon_color' => 'aqua',
         ],
+        */
     ],
 
     /*

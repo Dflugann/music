@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+/**Route::get('/', function () {
     echo "teste";exit;
     return view('welcome');
 });
+ */
+Route::get('/',                 ['as'=> 'site.index',   'uses'  => 'Site\IndexController@index']);
+Route::get('/admin',            ['as'=> 'admin.index',  'uses'  => 'Admin\MusicController@index']);
+Route::get('/admin/create',     ['as'=> 'admin.create', 'uses'  => 'Admin\MusicController@create']);
+Route::get('/admin/edit/{id}',  ['as'=> 'admin.edit',   'uses'  => 'Admin\MusicController@edit']);
+Route::post('/admin/store',     ['as'=> 'admin.store',  'uses'  => 'Admin\MusicController@store']);
+Route::put('/admin/update/{id}',['as'=> 'admin.update', 'uses'  => 'Admin\MusicController@update']);
+Route::get('/admin/delete/{id}',['as'=> 'admin.delete', 'uses'  => 'Admin\MusicController@delete']);
 
-Route::get('/music', ['as' => 'admin.index', 'uses' => 'Admin\MusicController@index']);
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
